@@ -2,7 +2,7 @@ import express from "express";
 import * as dotenv from "dotenv";
 // import OpenAI from "openai";
 import deepai from "deepai";
-import imgUrlToBase64 from "imgurl-to-base64";
+// import imgUrlToBase64 from "imgurl-to-base64";
 
 dotenv.config();
 const router = express.Router();
@@ -10,7 +10,7 @@ const router = express.Router();
 // const openai = new OpenAI({
 //   apiKey: process.env.OPENAI_API_KEY,
 // });
-deepai.setApiKey("quickstart-QUdJIGlzIGNvbWluZy4uLi4K");
+deepai.setApiKey(process.env.API_KEY);
 
 router.route("/").get((req, res) => {
   res.status(200).json({ message: "Hello from DALL.E ROUTES" });
